@@ -58,7 +58,7 @@ require "authentication/adminauth.php";
     <ul class="sidebar">
             <li class="side-title">UI Elements</li>
             <li class="side-link">
-                <a class="side-item active" href="user.html"><i class="bi bi-person"></i> User</a>
+                <a class="side-item" href="user.html"><i class="bi bi-person"></i> User</a>
             </li>
             <li class="side-link">
                 <a class="side-item" href="people.html"><i class="bi bi-people"></i> People</a>
@@ -67,10 +67,10 @@ require "authentication/adminauth.php";
                 <a class="side-item" href="product.html"><i class="bi bi-box2"></i> Product</a>
             </li>
             <li class="side-link">
-                <a class="side-item active" href="order.html"><i class="bi bi-upc-scan"></i> Order</a>
+                <a class="side-item" href="order.html"><i class="bi bi-upc-scan"></i> Order</a>
             </li>
             <li class="side-link">
-                <a class="side-item" href="statementofaccount.html"><i class="bi bi-journals"></i> Statement of Account</a>
+                <a class="side-item active" href="statementofaccount.html"><i class="bi bi-journals"></i> Statement of Account</a>
             </li>
             <li class="side-title">Reports</li>
             <li class="side-link">
@@ -114,52 +114,9 @@ require "authentication/adminauth.php";
                                         <th class="text-center table-active">Action</th>
                                     </thead>
                                     <tbody id="tbody-account">
-                                        <?php
-                                            include "config/connection.php";
-                                            $sql = "SELECT payment.id,user_id,quantity,total_amount,total_qty,overall_total,customer,date_today,payment.status,date_created,productname,amount,user.username
-                                                    FROM payment
-                                                    INNER JOIN product
-                                                    INNER JOIN user
-                                                    ON payment.order_id = product.id
-                                                    AND payment.user_id = user.id
-                                                    WHERE payment.status = '0'
-                                                    ORDER BY date_today ";
-                                                    // WHERE customer = 'customer'
-                                                    // WHERE date_today = current_date()
-                                            $result = mysqli_query($conn,$sql);
-
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                ?>
-                                                    <tr>
-                                                        <td class="text-center"><?php echo $row['id'] ?></td>
-                                                        <td class="text-uppercase"><h6><?php echo $row['productname'] ?></h6><small class="text-muted"><?php echo $row['date_created'] ?></small></td>
-                                                        <td><?php echo $row['amount'] ?></td>
-                                                        <td class="text-end"><?php echo $row['quantity'] ?></td>
-                                                        <td><?php echo $row['total_amount'] ?></td>
-                                                        <?php
-                                                            if($row['customer'] == '' ) {
-                                                                echo "<td class='text-center'>customer</td>";
-                                                            } else if($row['customer'] != '' ) {
-                                                                echo "<td class='text-center'>".$row['customer']."</td>";
-                                                            } else {
-                                                                echo "<td class='text-center'>null</td>";
-                                                            }
-                                                        ?>
-                                                        <td><?php echo $row['username'] ?></td>
-                                                        <?php
-                                                            if($row['status'] == 0 ) {
-                                                                echo "<td class='text-center text-success table-active'>Paid in Cash</td>";
-                                                            } else if($row['status'] == 1) {
-                                                                echo "<td class='text-center text-warning table-active'>Paid for Liabilities</td>";
-                                                            } else {
-                                                                echo "<td class='text-center table-active'>null</td>";
-                                                            }
-                                                        ?>
-                                                        <td class="text-center table-active"><button type="button" class="btn btn-secondary btn-sm">View</button></td>
-                                                    </tr>
-                                                <?php
-                                            }
-                                        ?>
+                                        <tr>
+                                            <td colspan="9" class="text-center">no data found</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
