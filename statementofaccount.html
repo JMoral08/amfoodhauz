@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 require "authentication/adminauth.php";
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +17,7 @@ require "authentication/adminauth.php";
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Montserrat:wght@500&family=Passion+One:wght@900&display=swap" rel="stylesheet">
 </head>
 <body class="app-body">
-<header class="app-header">
+    <header class="app-header">
         <span class="app-brand">
             <a class="brand-first" href="#">a&m</a>
             <a class="brand-second" href="#">foodhauz</a>
@@ -26,17 +26,17 @@ require "authentication/adminauth.php";
         <nav class="navbar-nav">
             <ul class="side-nav">
                 <li class="nav-link">
-                    <a class="nav-item position-relative" href="settings.php"><i class="bi bi-gear"></i></a>
+                    <a class="nav-item position-relative" href="settings.html"><i class="bi bi-gear"></i></a>
                 </li>
                 <div class="vr"></div>
                 <li class="nav-link dropdown">
                     <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-circle"></i> <?php echo $username ?>
+                    <i class="bi bi-person-circle"></i> Admin
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li class="dropdown-header text-uppercase">Accounts</li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+                        <li><a class="dropdown-item" href="logout.html"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
                     </ul>
                 </li>
             </ul>
@@ -49,7 +49,7 @@ require "authentication/adminauth.php";
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                     <li class="dropdown-header">Accounts</li>
                     <li class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+                    <li><a class="dropdown-item" href="logout.html"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
                 </ul>
             </li>
         </div>
@@ -58,30 +58,39 @@ require "authentication/adminauth.php";
     <ul class="sidebar">
             <li class="side-title">UI Elements</li>
             <li class="side-link">
-                <a class="side-item" href="user.php"><i class="bi bi-person"></i> User</a>
+                <a class="side-item active" href="user.html"><i class="bi bi-person"></i> User</a>
             </li>
             <li class="side-link">
-                <a class="side-item" href="people.php"><i class="bi bi-people"></i> People</a>
+                <a class="side-item" href="people.html"><i class="bi bi-people"></i> People</a>
             </li>
             <li class="side-link">
-                <a class="side-item" href="product.php"><i class="bi bi-box2"></i> Product</a>
+                <a class="side-item" href="product.html"><i class="bi bi-box2"></i> Product</a>
             </li>
             <li class="side-link">
-                <a class="side-item active" href="statementofaccount.php"><i class="bi bi-journals"></i> Statement of Account</a>
+                <a class="side-item active" href="order.html"><i class="bi bi-upc-scan"></i> Order</a>
+            </li>
+            <li class="side-link">
+                <a class="side-item" href="statementofaccount.html"><i class="bi bi-journals"></i> Statement of Account</a>
             </li>
             <li class="side-title">Reports</li>
             <li class="side-link">
-                <a class="side-item" href="inventory.php"><i class="bi bi-bar-chart-line"></i> Inventory</a>
+                <a class="side-item" href="expenses.html"><i class="bi bi-graph-up-arrow"></i> Expenses</a>
+            </li>
+            <li class="side-link">
+                <a class="side-item" href="liabilities.html"><i class="bi bi-credit-card"></i> Liabilities</a>
+            </li>
+            <li class="side-link">
+                <a class="side-item" href="inventory.html"><i class="bi bi-bar-chart-line"></i> Inventory</a>
             </li>
             <li class="side-footer">
-            <p class="mt-1">Alrights Reserve @ <?php echo date('Y'); ?> </p>
+            <p class="mt-1">Alrights Reserve </p>
             </li>
         </ul>
     </aside>
     <main class="app-main">
         <ul class="breadcrumb">
             <li><a href="#"><i class="bi bi-house-fill"></i></a></li>
-            <li><a href="#"><?php echo $username ?></a></li>
+            <li><a href="#">Admin</a></li>
             <li>S O A Page</li>
         </ul>
         <div class="container-fluid mt-5">
