@@ -110,12 +110,22 @@ require "authentication/adminauth.php";
                                     </thead>
                                     <tbody id="tbody-generate-user">
                                         <tr>
-                                            <td">Junjie Morales</td>
+                                            <td>Junjie Morales</td>
                                             <td>Admin</td>
                                             <td>pass@1234</td>
                                             <td>admin@gmail.com</td>
                                             <td>Admin</td>
-                                            <td><i class='bi bi-three-dots-vertical'></i></td>
+                                            <td class="text-center">
+                                                <div class='dropstart'>
+                                                    <button class='btn btn-link fs-5 text-black-50' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots'></i></button>
+                                                    <ul class='dropdown-menu text-uppercase'>
+                                                        <li class='dropdown-header'><i class='bi bi-three-dots-vertical'></i> Actions</li>
+                                                        <li><hr class='dropdown-divider'></li>
+                                                        <li><a href='profile.php?id="+data[i].id+"' class='dropdown-item text-dark' id='btn-view'><i class='bi bi-eye'></i> View User</a></li>
+                                                        <li><a href='#'class='dropdown-item text-danger' id='btn-remove' data-id='"+data[i].id+"'><i class='bi bi-trash3'></i> Remove to User</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -109,7 +109,7 @@ require "authentication/adminauth.php";
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead class="table-dark">
-                                            <th colspan="3">Fullname</th>
+                                            <th>Fullname</th>
                                             <th>Contact</th>
                                             <th>Email</th>
                                             <th>Address</th>
@@ -125,7 +125,12 @@ require "authentication/adminauth.php";
                                                 <td>Cebu Philippines</td>
                                                 <td>July 08, 1996</td>
                                                 <td>Manager</td>
-                                                <td>view</td>
+                                                <td class="text-center">
+                                                    <div class='btn-group' role='group'>
+                                                        <button class='btn btn-outline-secondary btn-sm' data-id='"+data[i].id+"' id='btn-edit'><i class='bi bi-pencil-square'></i></button>
+                                                        <button class='btn btn-secondary btn-sm' data-id='"+data[i].id+"' id='btn-generate'><i class='bi bi-person-plus'></i> Generate</button>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
