@@ -36,7 +36,7 @@ require "authentication/adminauth.php";
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li class="dropdown-header text-uppercase">Accounts</li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="logout.html"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+                        <li><a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
                     </ul>
                 </li>
             </ul>
@@ -49,7 +49,7 @@ require "authentication/adminauth.php";
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                     <li class="dropdown-header">Accounts</li>
                     <li class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="logout.html"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+                    <li><a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
                 </ul>
             </li>
         </div>
@@ -110,7 +110,12 @@ require "authentication/adminauth.php";
                                     </thead>
                                     <tbody id="tbody-generate-user">
                                         <tr>
-                                            <td colspan="6" class="text-center">no data found</td>
+                                            <td">Junjie Morales</td>
+                                            <td>Admin</td>
+                                            <td>pass@1234</td>
+                                            <td>admin@gmail.com</td>
+                                            <td>Admin</td>
+                                            <td><i class='bi bi-three-dots-vertical'></i></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -135,9 +140,7 @@ require "authentication/adminauth.php";
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-
-$('.btn-toggle-show').on('click', function() {
+    $('.btn-toggle-show').on('click', function() {
         if(!$('body').hasClass('show')) {
             $('body').addClass('show');
 
@@ -156,14 +159,12 @@ $('.btn-toggle-show').on('click', function() {
         }
     });
 
-if( $('.sidebar').length > 0 ) {
+    if( $('.sidebar').length > 0 ) {
         $('.sidebar').slimScroll({
             height: '95%',
             wheelStep: 5,
         });
     }
 
-
-});
 </script>
 </html>
